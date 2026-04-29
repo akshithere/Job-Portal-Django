@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    container_name: jobportal
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - sqlite_data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+
+volumes:
+  sqlite_data:
